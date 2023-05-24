@@ -1,3 +1,4 @@
+include './person'
 class Student < Person
   attr_reader :classroom, :id
 

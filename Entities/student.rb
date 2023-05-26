@@ -1,14 +1,17 @@
 include './person'
 class Student < Person
-  attr_reader :classroom, :id
+  attr_reader :classroom
 
-  def initialize(name = 'Unknown', age = nil, parent_permission: true, classroom: nil)
-    super(name, age, parent_permission)
-    @classroom = classroom
-    @id = Random.rand(1..1000)
+  def initialize(age, _classroom, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission: parent_permission)
   end
 
   def play_hooky
     '¯\\(ツ)/¯'
+  end
+
+  def classroom=(classroom)
+    @classroom = classroom
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end

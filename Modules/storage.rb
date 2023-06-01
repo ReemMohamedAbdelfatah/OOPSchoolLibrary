@@ -5,7 +5,7 @@ class Storage
   def self.save_date(class_name, object)
     file_path = File.expand_path("#{@base_url}#{class_name}.#{@file_extention}")
     File.write(file_path, JSON.generate(object))
-  end  
+  end
 
   def self.load_data(class_name)
     file_path = "#{@base_url}#{class_name}.#{@file_extention}"

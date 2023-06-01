@@ -3,7 +3,6 @@ require_relative './App/app'
 class Options
   def initialize
     @app = App.new(self)
-    puts
     puts "\nWELCOME TO THE SCHOOL LIBRARY APP!\n"
     show_menu
   end
